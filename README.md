@@ -1,50 +1,63 @@
-# React + TypeScript + Vite
+# User Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+This project is a simple user dashboard built using React and TypeScript. It fetches a list of users from a REST API and allows users to filter and sort the displayed data. The UI adapts to different screen sizes for a responsive experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Fetches user data from an external REST API
+  Displays user information in a card view (Name, Email, Phone, Website, and Address)
+  Provides a search input field to filter users by name.
+- Supports sorting by Name or Email in both ascending/descending order
+- Styled using Sass and CSS Modules for modular, scoped styling.
+- Fully responsive layout (mobile, tablet, desktop)
+- Implements functional programming principles (using `.map()`, `.filter()`, and `.reduce()` for state management)
+- Highlight the searched name
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- React (Functional Components, Hooks)
+- TypeScript
+- Sass (SCSS for styling) and CSS Modules
+- REST API (via https://jsonplaceholder.typicode.com/users)
+- Vite (as the build tool)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting started
+
+1. Install dependencies
+
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Start the development server
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+3. Open [localhost:5173](http://localhost:5173/) in your browser to view the dashboard.
+
+## Build for production
+
+1. Create a production build
+
+```bash
+npm run build
+```
+
+2. Preview the production build locally
+
+```bash
+npm run preview
+```
+
+## Responsive Design
+
+The layout is fully responsive, designed to work on various screen sizes, including:
+
+- Mobile
+- Tablet
+- Desktop
+  This is achieved using CSS media queries inside Sass files.
