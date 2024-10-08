@@ -1,0 +1,22 @@
+@import 'variables';
+
+// Mixin for responsive font size
+@mixin responsive-font-size($font-size) {
+    font-size: $font-size;
+
+    @media (max-width: $breakpoint-sm) {
+        font-size: calc(#{$font-size} * 0.85); // Decrease by 15% for small devices
+    }
+
+    @media (min-width: $breakpoint-md) {
+        font-size: calc(#{$font-size} * 1); // Default size
+    }
+
+    @media (min-width: $breakpoint-lg) {
+        font-size: calc(#{$font-size} * 1.15); // Increase by 15% for large devices
+    }
+
+    @media (min-width: $breakpoint-xl) {
+        font-size: calc(#{$font-size} * 1.25); // Increase by 25% for extra large devices
+    }
+}
