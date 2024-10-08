@@ -1,12 +1,16 @@
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
-import "./App.css";
+import Header from "./components/header/Header";
+import React from "react";
+import styles from "./App.module.scss";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
-    <div>
-      <h1>Hello</h1>
+    <div className={styles.container}>
+      <Header />
+      <div className={styles.content}>
+        <h1>Content</h1>
+      </div>
+      <Footer />
     </div>
   );
 }
